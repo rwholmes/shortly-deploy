@@ -42,7 +42,8 @@ module.exports = function(grunt) {
         'public/**/*.js'
       ],
       options: {
-        force: 'true',
+        // changed force to false
+        force: 'false',
         jshintrc: '.jshintrc',
         ignores: [
           'public/lib/**/*.js',
@@ -105,7 +106,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('test', ['mochaTest']);
 
-  grunt.registerTask('build', ['concat']);
+  grunt.registerTask('build', ['jshint', 'concat', 'uglify']);
 
   grunt.registerTask('upload', function(n) {
     if(grunt.option('prod')) {
