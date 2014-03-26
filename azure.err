@@ -1,0 +1,37 @@
+Wed Mar 26 2014 15:23:01 GMT-0700 (PDT):
+{ [Error: The server encountered an internal error. Please retry the request.]
+  stack: [Getter/Setter],
+  code: 'InternalError',
+  statusCode: 500,
+  requestId: '559f08f12273812a9130cda12650a7de',
+  __frame: 
+   { name: 'createSite__3',
+     line: 261,
+     file: '/Users/HR10/.nvm/v0.10.25/lib/node_modules/azure-cli/lib/commands/websites/websitesclient._js',
+     prev: 
+      { name: 'createSite',
+        line: 383,
+        file: '/Users/HR10/.nvm/v0.10.25/lib/node_modules/azure-cli/lib/commands/site._js',
+        prev: [Object],
+        active: false,
+        offset: 20,
+        col: 21 },
+     active: false,
+     offset: 19,
+     col: 19 },
+  rawStack: [Getter] }
+Error: The server encountered an internal error. Please retry the request.
+    at Function.ServiceClient._normalizeError (/Users/HR10/.nvm/v0.10.25/lib/node_modules/azure-cli/node_modules/azure/node_modules/azure-common/lib/services/serviceclient.js:785:23)
+    at /Users/HR10/.nvm/v0.10.25/lib/node_modules/azure-cli/node_modules/azure/node_modules/azure-common/lib/services/filters/errorhandlingfilter.js:44:29
+    at Request._callback (/Users/HR10/.nvm/v0.10.25/lib/node_modules/azure-cli/node_modules/azure/node_modules/azure-common/lib/http/request-pipeline.js:109:14)
+    at Request.self.callback (/Users/HR10/.nvm/v0.10.25/lib/node_modules/azure-cli/node_modules/azure/node_modules/request/request.js:129:22)
+    at Request.EventEmitter.emit (events.js:98:17)
+    at Request.<anonymous> (/Users/HR10/.nvm/v0.10.25/lib/node_modules/azure-cli/node_modules/azure/node_modules/request/request.js:873:14)
+    at Request.EventEmitter.emit (events.js:117:20)
+    at IncomingMessage.<anonymous> (/Users/HR10/.nvm/v0.10.25/lib/node_modules/azure-cli/node_modules/azure/node_modules/request/request.js:824:12)
+    at IncomingMessage.EventEmitter.emit (events.js:117:20)
+    at _stream_readable.js:920:16
+    at createSite__3 (/Users/HR10/.nvm/v0.10.25/lib/node_modules/azure-cli/lib/commands/websites/websitesclient._js:280:19)
+    at createSite (/Users/HR10/.nvm/v0.10.25/lib/node_modules/azure-cli/lib/commands/site._js:403:21)
+    at __4 (/Users/HR10/.nvm/v0.10.25/lib/node_modules/azure-cli/lib/commands/site._js:250:12)
+

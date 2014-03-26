@@ -1,0 +1,98 @@
+SPRINT NOTES
+
+First thing -- Go through canonical solution and explore it, and see how their code is differnt from our code
+
+Server specs refer to Mongo, so they won't work with the initial sequelize version
+
+Liberate the repo so you can deploy (both fork repo, both liberate repo, do all work on one of them, then in the end push to the other person's)
+
+Set up a server using Azure
+
+"Use Azure command line toolsl to provision and configure a 'production server'"
+	-- google
+
+"Reconfigure your ap to work in both envirionments"
+	-- this refers to the idea of having a production environment vs. a development envirionment
+
+Never hardcode your api keys
+
+Use environmental variables
+	-- process.env (this gives you access to the environment that node is running in)
+	-- set variables in your environment
+	-- port being set to 4568 is a problem (because the server set up on node will not have that available),
+		instead Azure will give you a variable called port that automatically link to the port
+				
+				var port = process.env.PORT || 4568;
+		
+		This will allow you to work in both envirionments! :)
+
+	Generally, environmental variables are set in all caps.
+
+Don't use auto deployment! Google how to use the Azure command line interface
+
+Once you have that set up, log into the web interface and click 'configure'
+Scroll down to app settings
+App settings is a way to set environmental variables!!! :)
+
+	for example, API_KEY  ...... someapikey
+
+TO INSTALL COMMAND LINE INTERFACE (already installed downstairs)
+
+Google to figure out how to do it on your own computer
+		
+		npm i -g azure-cli
+
+Lecture today more specfics on using Grunt
+
+DONT FOCUS ON SHIT UNLESS ITS DIRECTLY RELATED TO THIS!!
+
+When we push our code to Azure, it knows to run npm install because of our .deployment file and our deploy.sh file
+(don't worry about this file! it will do it)
+
+in the future if you use grunt come back to this repo and copy deploy.sh
+
+The gruntfile is intentionally incomplete
+
+
+CREATE WEBSITE
+CUSTOM CREATE
+Enter a url
+'Publish from source control' (github)
+Subscription: always try BizSpark first
+no database
+
+How to do it with command line tools:
+- install the command line tools
+- connect yoru az account to this machine
+		azure account download
+- azure account import ~/pathtoFile
+- azure account list
+- azure site create some-name --git
+ignore the error and just wait and check if site exists
+you may have to make a pasword for the repo
+
+hanselmann.com/blog/ManagingTheClubFromTheCommandLIne
+
+Click on website, go to configure, and enter the secret variables there
+
+to get your secret variable back inside your code use: process.env.MY_SECRET_CODE
+
+you can look at all the logs coming out of a website by entering: "azure site log tail name-of-the-webiste"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
