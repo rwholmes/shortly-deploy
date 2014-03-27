@@ -8,7 +8,7 @@ module.exports = function(grunt) {
       },
       dist: {
         src: ['public/**/*.js'],
-        dest: 'concatted.js'
+        dest: 'public/dist/concatted.js'
       }
     },
 
@@ -32,8 +32,8 @@ module.exports = function(grunt) {
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
       build: {
-        src: 'concatted.js',
-        dest: 'uglified.min.js'
+        src: 'public/dist/concatted.js',
+        dest: 'public/dist/uglified.min.js'
       }
     },
 
