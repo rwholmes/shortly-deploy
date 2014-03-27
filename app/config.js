@@ -1,5 +1,11 @@
 var Bookshelf = require('bookshelf');
 var path = require('path');
+// var mongoose = require('mongoose');
+
+// var Schema = mongoose.Schema;
+// var ObjectId = Schema.ObjectId;
+
+// var db = mongoose.connection;
 
 var db = Bookshelf.initialize({
   client: 'sqlite3',
@@ -12,6 +18,26 @@ var db = Bookshelf.initialize({
     filename: path.join(__dirname, '../db/shortly.sqlite')
   }
 });
+
+// var Urls = new Schema({
+//   url: { type: String },
+//   base_url: { type: String },
+//   code: { type: String },
+//   title: { type: String },
+//   visits: { type: Number }
+//   // Maybe need to add timestamps?
+// });
+
+// var Users = new Schema({
+//   username: { type: String, unique: true },
+//   password: { type: String },
+//   // Maybe need to add timestamps?
+// });
+
+// module.exports = {
+//   Urls: mongoose.model('Urls', Urls),
+//   Users: mongoose.model('Users', Users)
+// };
 
 db.knex.schema.hasTable('urls').then(function(exists) {
   if (!exists) {
